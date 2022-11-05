@@ -1,1 +1,6 @@
+Write a program that reads a file "data.in" that can be of any type (exe, pdf, doc, etc), and then
+copy its content to another file "data.out". The program will be tested by an arbitrary file I have
+and then verified based on its type. For example, if it's a pdf file, "data.out" should be opened
+successfully by a PDF reader. If it's a video file, the output file can be replayed.
 
+To ensure the correctness, please use binary file read/write for your program.
