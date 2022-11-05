@@ -1,0 +1,3 @@
+Please complete Problem 5 in Chapter 4 (image shown below). Matrix A and B should be read from two files named "A.txt" and "B.txt". The program should print the result matrix C on the screen. You may create your own test files A.txt and B.txt but your program will be graded with my own test files.
+Your program should execute with command line arguments M, N, and K, indicating that matrix A is of size MxN and matrix B is of size NxK. Therefore, matrix C is of size MxK.
+For example, your program may run like "./P3.exe 10 8 6".
