@@ -1,0 +1,41 @@
+Please simulate a Best Fit memory block allocation algorithm.
+
+Your program runs without command line arguments. For example, your program may run like "./P5.exe".
+
+At the beginning, we have a linked list of 1024 nodes, each contains a free memory block of 1024
+Bytes. The linked list node should contains both block id and free memory size. For Best Fit
+policy, your linked list needs to be sorted in the ascending order of the memory block size. 
+
+Your program starts by reading a list of memory requests from a file named "requests.txt", which
+consists of a list with two types of requests:
+A：Allocation of a memory region of a particular size. For example, "A 1 512" specifies a
+request with id of 1 for an allocation of 512 Bytes memory block. Request Id starts from 1 and
+increases incrementally.
+R: Release of the memory requests by a particular request id. For example, "R 1" releases
+the memory allocated back to the identified memory block.
+
+When processing each request, the program should locate the "smallest" memory block that
+exceeds the requested size and then update the linked list node's size. Note that the new size
+may have to be moved to an earlier position in the list to maintain the ascending order.
+
+For allocated memory blocks, you should maintain a separate "allocation linked list", with each
+node containing the request id, block id, and memory size. It's a good idea to sort this linked list
+by the request id so that at the time of receiving a release request, you can identify the memory
+block, remove the node from the allocation linked list, and then return the size back to the free
+memory block linked list. After that, the linked list may need to be adjusted to keep the ascending
+order by size.
+
+Your program should keep running without crashing. If a request cannot be served due to a
+failure of finding new blocks, then a message should be printed out
+
+Implementation Requirement:
+Only Linked list will be accepted.
+No STL List allowed.
+
+Testing
+Your program should print the following messages at run time:
+Allocation such as "512 bytes have been allocated at block 5 for request 1".
+Release such as "512 bytes have been returned backed to block 5 for request 1".
+
+At the end, write to a textfile named "final_size.txt" with size of each node in the free memory
+block linked list.
