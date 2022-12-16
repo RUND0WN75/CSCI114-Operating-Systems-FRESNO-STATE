@@ -1,0 +1,37 @@
+In this program, we will implement a one-way tunnel synchronization. Cars arriving the tunnel
+may go either north direction or south direction. The rules for entering the tunnel is set as follows:
+
+If a car arrives and there is no car in the tunnel, the car can enter the tunnel without waiting;
+N-batch rule: at most N consecutive, same-direction cars can enter the tunnel;
+
+If N cars in one direction have been waiting, no more cars in the other direction may enter the
+tunnel, even if the total number of cars in that direction is less than N;
+
+If N cars in one direction already entered the tunnel but no car in the other direction is waiting,
+then the (N+1)th car may enter the tunnel as the first car in the N-batch rule stated above.
+
+Each car should be treated as a separate thread and your program should be able to handle up
+to 2000-5000 cars arriving in each direction.
+
+Your program should execute with command line argument N, indicating the maximum numbers
+of cars allowed in the tunnel for any direction. N ranges from 5 to 15.
+
+For example, your program may run like "./P4.exe 8".
+
+Each thread reads a list of requests from a common file cars.txt. Each line of the file has just the
+direction information.
+
+Sample input: cars.txt
+
+Your program should keep running without crashing, deadlock, or violating the tunnel rules.
+
+Testing
+Your program should print major events. For example:
+#1 north direction car arriving
+#1 south direction car arriving
+#1 north direction car waiting
+#1 north direction car entering the tunnel
+#1 north direction car leaving the tunnel
+N cars have been waiting
+Nth car has left the tunnel
+etc
